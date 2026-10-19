@@ -7,6 +7,12 @@ pipeline {
         stage('Validate Application') { steps { bat 'python scripts/check_app.py' } }
 
         stage('Packaging Release') { steps { bat 'python scripts/build_release.py' } }
-        stage('Archive Release') { steps { archiveArtifacts artifacts: 'dist/*.zip', fingerprint: true } }
+        stage('Archive Release') { 
+            steps { 
+                archiveArtifacts artifacts: 'dist/*.zip',
+                fingerprint: true,
+                echo %BUILD_NUMBER% > build-info.txt
+            }
+        }
     }
 }
