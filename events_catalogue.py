@@ -30,4 +30,14 @@ EVENTS = [
         'category': 'Technical',
         'description': 'Discuss how small web systems can be deployed and operated.',
     },
+    {
+        'id': 'karaoke-night',
+        'title': 'Jabobs And Nicks Super Karaoke Night',
+        'date': '2026-10-21',
+        'time': '18:00',
+        'location': 'Jacobs House',
+        'capacity': 10,
+        'category': 'Party',
+        'description': 'Karaoke night with the gang'
+    },
 ]
