@@ -11,7 +11,7 @@ pipeline {
             steps { 
                 archiveArtifacts artifacts: 'dist/*.zip',
                 fingerprint: true,
-                echo Build %BUILD_NUMBER% > build-info.txt
+                bat 'echo %BUILD_NUMBER% > build-info.txt'
             }
         }
     }
