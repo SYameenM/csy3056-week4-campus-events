@@ -9,6 +9,6 @@ pipeline {
         stage('Packaging Release') { steps { bat 'python scripts/build_release.py' } }
 
         stage('Archive Release') { steps { archiveArtifacts artifacts: 'dist/*.zip', fingerprint: true } }
-        stage('Archive Build Info') { steps { archiveArtifacts artifacts: 'build/*', bat 'echo %BUILD_NUMBER% > build-info.txt' } }
+        stage('Archive Build Info') { steps { archiveArtifacts artifacts: 'build/*.txt', bat 'echo %BUILD_NUMBER% > build-info.txt' } }
     }
 }
